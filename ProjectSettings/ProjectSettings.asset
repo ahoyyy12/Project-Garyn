@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 27
-  productGUID: 00000000000000000000000000000000
+  productGUID: 8624c20cb6eff554e94fd68538730aa4
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -732,7 +732,7 @@ PlayerSettings:
     tvOS: UNITY_POST_PROCESSING_STACK_V2
   additionalCompilerArguments: {}
   platformArchitecture:
-    iPhone: 2
+    iPhone: 1
   scriptingBackend:
     Android: 1
     WP8: 2
@@ -857,7 +857,7 @@ PlayerSettings:
   cloudProjectId: e5e477e6-2647-4957-8a85-18c1db1f9877
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
+  projectName: Project Garyn
   organizationId: electron08
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 1
