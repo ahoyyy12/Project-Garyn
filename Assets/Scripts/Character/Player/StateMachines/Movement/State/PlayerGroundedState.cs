@@ -5,21 +5,11 @@ using UnityEngine.InputSystem;
 
 namespace ProjectGaryn
 {
-    public class PlayerRunningState : PlayerGroundedState
+    public class PlayerGroundedState : PlayerMovementState
     {
-        public PlayerRunningState(PlayerMovementStateMachine playerMovementStateMachine) : base(playerMovementStateMachine)
+        public PlayerGroundedState(PlayerMovementStateMachine playerMovementStateMachine) : base(playerMovementStateMachine)
         {
         }
-
-
-        #region
-        public override void Enter()
-        {
-            base.Enter();
-
-            speedModifier = 1f;
-        }
-        #endregion
 
         #region Reusable Methods
         protected override void AddInputActionsCallbacks()
@@ -36,19 +26,28 @@ namespace ProjectGaryn
 
             stateMachine.Player.Input.PlayerActions.Movement.canceled -= OnMovementCanceled;
         }
-        #endregion
 
+        protected virtual void OnMove()
+        {
+            if (shouldWalk)
+            {
+                stateMachine.ChangeState(stateMachine.WalkingState);
+
+                return;
+            }
+
+            stateMachine.ChangeState(stateMachine.RunningState);
+        }
+        #endregion
 
         #region Input Methods
 
-        protected override void OnWalkToggleStarted(InputAction.CallbackContext context)
+        protected virtual void OnMovementCanceled(InputAction.CallbackContext context)
         {
-            base.OnWalkToggleStarted(context);
-
-            stateMachine.ChangeState(stateMachine.WalkingState);
+            stateMachine.ChangeState(stateMachine.idlingState);
         }
 
-
         #endregion
+
     }
 }
