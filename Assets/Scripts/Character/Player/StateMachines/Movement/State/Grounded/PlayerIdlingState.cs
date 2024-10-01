@@ -18,7 +18,7 @@ namespace ProjectGaryn
         {
             base.Enter();
 
-            speedModifier = 0;
+            stateMachine.ReusableData.MovementSpeedModifier = 0;
 
             ResetVelocity();
         }
@@ -27,7 +27,7 @@ namespace ProjectGaryn
         {
             base.Update();
 
-            if(movementInput == Vector2.zero)
+            if(stateMachine.ReusableData.MovementInput == Vector2.zero)
             {
                 return;
             }

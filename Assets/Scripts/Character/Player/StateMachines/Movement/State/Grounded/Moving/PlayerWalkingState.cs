@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 namespace ProjectGaryn
 {
-    public class PlayerWalkingState : PlayerGroundedState
+    public class PlayerWalkingState : PlayerMovingState
     {
         public PlayerWalkingState(PlayerMovementStateMachine playerMovementStateMachine) : base(playerMovementStateMachine)
         {
@@ -17,7 +17,7 @@ namespace ProjectGaryn
         {
             base.Enter();
 
-            speedModifier = 0.225f;
+            stateMachine.ReusableData.MovementSpeedModifier = movementData.WalkData.SpeedModifier;
         }
         #endregion
 

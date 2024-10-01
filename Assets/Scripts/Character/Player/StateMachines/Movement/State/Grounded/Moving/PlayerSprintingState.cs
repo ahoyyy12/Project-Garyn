@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ProjectGaryn
 {
-    public class PlayerSprintingState : PlayerGroundedState
+    public class PlayerSprintingState : PlayerMovingState
     {
         public PlayerSprintingState(PlayerMovementStateMachine playerMovementStateMachine) : base(playerMovementStateMachine)
         {

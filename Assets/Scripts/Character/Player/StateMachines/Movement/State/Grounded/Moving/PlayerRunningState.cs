@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 namespace ProjectGaryn
 {
-    public class PlayerRunningState : PlayerGroundedState
+    public class PlayerRunningState : PlayerMovingState
     {
         public PlayerRunningState(PlayerMovementStateMachine playerMovementStateMachine) : base(playerMovementStateMachine)
         {
@@ -17,7 +17,7 @@ namespace ProjectGaryn
         {
             base.Enter();
 
-            speedModifier = 1f;
+            stateMachine.ReusableData.MovementSpeedModifier = movementData.RunData.SpeedModifier;
         }
         #endregion
 
